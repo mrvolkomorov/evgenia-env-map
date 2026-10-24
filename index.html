@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Карта вашей среды: что уже собрано и как это проверить</title>
+<style>
+:root{--ink:#1a2330;--muted:#5b6673;--line:#dfe4ea;--bg:#f7f8fa;--card:#fff;--accent:#1a4d8f;--accent2:#0f7b6c;--warn:#b8860b;--warnbg:#fff8e6;--free:#0f7b6c;--freebg:#e6f5f2}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+header{background:#0b3d6b;background:linear-gradient(135deg,#0b3d6b,#1a4d8f);color:#fff;padding:32px 24px}
+header .wrap{max-width:1080px;margin:0 auto}
+header .badge{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:4px 12px;border-radius:20px;font-size:13px;font-weight:600}
+header h1{font-size:29px;line-height:1.25;margin:14px 0 10px;font-weight:700}
+header p{font-size:16px;opacity:.92;max-width:800px}
+header .meta{font-size:14px;opacity:.8;margin-top:14px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+main{padding:32px 0 56px}
+section{margin-bottom:44px}
+h2{font-size:22px;margin-bottom:8px;font-weight:700}
+h2 + .lead{color:var(--muted);font-size:15px;margin-bottom:18px}
+h3{font-size:17px;margin:24px 0 10px;font-weight:650}
+h4{font-size:15.5px;margin:0 0 6px;color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin-bottom:16px}
+.alert{border-left:4px solid var(--warn);background:var(--warnbg);border-radius:0 8px 8px 0}
+.alert strong{color:#8a6100}
+.good{border-left:4px solid var(--accent2);background:var(--freebg);border-radius:0 8px 8px 0}
+.good strong{color:#0b5f53}
+.free-badge{display:inline-block;background:var(--freebg);color:var(--free);font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:4px;border:1px solid #bfe3dc;white-space:nowrap}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:14.5px}
+th{background:#eef1f5;text-align:left;padding:12px 14px;font-weight:650;font-size:13px;color:#3d4753;border-bottom:2px solid var(--line)}
+td{padding:12px 14px;border-bottom:1px solid #eceff2;vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr.pick{background:#f4faf8}
+.mname{font-weight:650}
+.mid{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--muted);word-break:break-all}
+.prompt{background:#f4f6f8;border:1px solid #e2e6eb;border-left:3px solid var(--accent);border-radius:0 7px 7px 0;padding:14px 16px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:#2b3442;margin:12px 0;white-space:pre-wrap;line-height:1.55}
+.prompt-lbl{font-size:13px;font-weight:650;color:var(--accent);margin:16px 0 4px}
+.steps{counter-reset:st;list-style:none;margin:12px 0}
+.steps li{counter-increment:st;position:relative;padding-left:38px;margin-bottom:14px}
+.steps li:before{content:counter(st);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-size:13.5px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.check li{list-style:none;position:relative;padding-left:28px;margin-bottom:9px}
+.check li:before{content:"□";position:absolute;left:0;top:-1px;font-size:17px;color:var(--accent2);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:16px 0}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:16px 18px}
+.mini p{font-size:14px;color:var(--muted)}
+ul,ol{margin:10px 0 10px 22px}
+li{margin-bottom:7px}
+a{color:var(--accent)}
+.tblwrap{overflow-x:auto;border-radius:10px;border:1px solid var(--line);background:var(--card)}
+.tblwrap table{border:none}
+footer{background:#1f2732;color:#9aa5b1;padding:26px 24px;font-size:13.5px}
+footer .wrap{max-width:1080px;margin:0 auto}
+footer a{color:#8fb4e8}
+@media(max-width:640px){header h1{font-size:23px}main{padding:24px 0 40px}th,td{padding:10px 11px;font-size:13.5px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="badge">Раздаточный материал №9</span>
+<h1>Карта вашей среды: что уже собрано и как это проверить</h1>
+<p>По итогам занятия 2. Все подключения, которые вы сделали 23 октября, — на одной странице: где что лежит, как проверить за две минуты и что делать, если сломалось.</p>
+<div class="meta">Занятие 2 · 23 октября 2026 · данные проверены 24 октября 2026</div>
+</div></header>
+
+<main class="wrap">
+
+<section>
+<div class="card good">
+<strong>Главная мысль.</strong> На занятии мы собрали рабочую среду для агентов: подключили модели, документы, таблицы, поиск в сети и агрегатор приложений. Эта среда никуда не делась — она в вашем браузере, под вашим Google-аккаунтом. Эта страница — карта того, что у вас уже есть, и способ проверить каждый пункт за две минуты, не звая тренера.
+</div>
+</section>
+
+<section>
+<h2>1. Что уже собрано</h2>
+<p class="lead">Восемь элементов. Каждый нужен для своей задачи — и все восемь работают одновременно, в одном окне.</p>
+<div class="tblwrap"><table>
+<thead><tr><th>Элемент</th><th>Где находится</th><th>Как проверить за 10 секунд</th><th>Что это вам даёт</th></tr></thead>
+<tbody>
+<tr class="pick"><td class="mname">Аккаунт LobeHub</td><td>Вход через Google. Открывается с любого устройства, где войдёте тем же аккаунтом</td><td>Открыть LobeHub — должен быть виден ваш агент слева</td><td>Все агенты, диалоги и настройки синхронизируются между компьютером и телефоном</td></tr>
+<tr class="pick"><td class="mname">Провайдер OpenRouter</td><td>Настройки → Поставщик ИИ → OpenRouter</td><td>Карточка провайдера в статусе «включено», список моделей не пустой</td><td>Единый ключ на сотни моделей разных разработчиков. Оплата по факту, за токены</td></tr>
+<tr class="pick"><td class="mname">Четыре модели</td><td>Там же, список моделей провайдера</td><td>Включены DeepSeek 4.1 Flash, GLM 5.3 Flash, LongCat 2.0, Step 5 Preview</td><td>Четыре бюджетные модели на выбор. Дорогие (Claude, GPT) выключены намеренно</td></tr>
+<tr class="pick"><td class="mname">Google Документы</td><td>Настройки → Коннекторы</td><td>В списке коннекторов значок Google Docs без ошибки</td><td>Агент может создать и заполнить документ</td></tr>
+<tr class="pick"><td class="mname">Google Таблицы</td><td>Настройки → Коннекторы</td><td>В списке коннекторов значок Google Sheets без ошибки</td><td>Агент может собрать данные в таблицу — это главный рабочий сценарий</td></tr>
+<tr class="pick"><td class="mname">Поиск в сети (Tavily)</td><td>Настройки → Коннекторы → пользовательский навык MCP</td><td>У коннектора есть инструменты поиска и извлечения</td><td>Агент ищет в интернете сам, без вас</td></tr>
+<tr class="pick"><td class="mname">Агрегатор приложений (Composio)</td><td>Настройки → Коннекторы → пользовательский навык MCP</td><td>В списке приложений Composio есть Gmail с зелёной галочкой</td><td>Одно подключение вместо десяти: почта, Диск, Instagram, Notion и другие по кнопке Connect</td></tr>
+<tr class="pick"><td class="mname">Агент «Тренд-стилист»</td><td>Слева в списке агентов, открыт по умолчанию</td><td>Открыть его чат и написать: «Какие задачи ты можешь решать?»</td><td>Рабочий агент под анализ трендов. Имя можно переименовать в один клик</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>2. Проверка за две минуты</h2>
+<p class="lead">Пройдите эти четыре шага до следующего занятия. Если все четыре выполняются — среда жива, чинить ничего не нужно.</p>
+<ol class="steps">
+<li><strong>Откройте LobeHub.</strong> Слева должен быть виден ваш агент. Если слева пусто — вы вошли под другим аккаунтом Google.</li>
+<li><strong>Настройки → Поставщик ИИ → OpenRouter.</strong> Карточка провайдера в статусе «включено», ниже — список моделей. Список не пустой — значит ключ принят.</li>
+<li><strong>Настройки → Коннекторы.</strong> Найдите четыре: Google Документы, Google Таблицы, Tavily, Composio. У каждого должен быть статус подключения, а не ошибка.</li>
+<li><strong>Откройте агента и напишите: «Какие задачи ты можешь решать?»</strong> Если он отвечает и задаёт уточняющие вопросы — вся цепочка работает.</li>
+</ol>
+<div class="card alert">
+<strong>Если что-то не сошлось.</strong> Не переустанавливайте и не пересоздавайте. У каждой неполадки есть конкретная причина и конкретное решение — таблица в разделе 6.
+</div>
+</section>
+
+<section>
+<h2>3. Где что лежит</h2>
+<p class="lead">Сохраните эту таблицу отдельно — это все адреса, по которым вы будете ходить.</p>
+<div class="tblwrap"><table>
+<thead><tr><th>Сервис</th><th>Адрес</th><th>Что там делать</th></tr></thead>
+<tbody>
+<tr><td class="mname">LobeHub</td><td class="mid">lobehub.com</td><td>Среда, где живут агенты. Настройки, коннекторы, диалоги</td></tr>
+<tr><td class="mname">OpenRouter</td><td class="mid">openrouter.ai</td><td>Ключи, баланс, история расходов. Раздел «Активность» — сюда смотреть, куда ушли деньги</td></tr>
+<tr><td class="mname">Mirocard</td><td class="mid">mirocard.ru</td><td>Карта для оплаты зарубежных сервисов: выпуск, пополнение, реквизиты</td></tr>
+<tr><td class="mname">Tavily</td><td class="mid">tavily.com</td><td>Поиск в сети. Ключ API — в настройках профиля</td></tr>
+<tr><td class="mname">Composio</td><td class="mid">composio.dev</td><td>Каталог приложений. Здесь же — MCP-адрес для подключения</td></tr>
+<tr><td class="mname">Apify</td><td class="mid">apify.com</td><td>Сбор данных с маркетплейсов. Регистрация, токен, каталог сценариев</td></tr>
+<tr><td class="mname">Google</td><td class="mid">docs.google.com · sheets.google.com · drive.google.com</td><td>Куда агенты складывают результат</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>4. Ключи и доступы: куда сохранять</h2>
+<p class="lead">На занятии мы складывали ключи в текстовый файл на телефоне. Это рабочий способ, но файл легко потерять — поэтому держим один файл в одном месте.</p>
+<ol class="steps">
+<li><strong>Создайте один файл</strong> с названием вроде «Мои ключи — не отправлять» и положите его в облако под своим Google-аккаунтом. Не в заметки телефона: они теряются при переустановке.</li>
+<li><strong>Впишите туда четыре вещи:</strong> ключ OpenRouter, вторую строку-URL из того же окна, ключ Tavily, MCP-адрес Composio.</li>
+<li><strong>Не пересылайте этот файл никому</strong> и не прикрепляйте к переписке. Файл с ключами — это доступ к вашим деньгам и к вашей почте.</li>
+</ol>
+<div class="tblwrap"><table>
+<thead><tr><th>Ключ</th><th>Показывается повторно?</th><th>Если потеряли</th></tr></thead>
+<tbody>
+<tr class="pick"><td class="mname">OpenRouter</td><td>Нет, показывается один раз</td><td>OpenRouter → API keys → создать новый. Старый отзывается — переподключите провайдера в LobeHub</td></tr>
+<tr class="pick"><td class="mname">Tavily</td><td>Да, в настройках профиля</td><td>Tavily → Settings → API keys → скопировать заново</td></tr>
+<tr class="pick"><td class="mname">Composio</td><td>Да, MCP-адрес на главной странице</td><td>Composio → главная → блок с MCP-адресом → скопировать</td></tr>
+<tr class="pick"><td class="mname">Apify</td><td>Да, в настройках профиля</td><td>Apify → Settings → Integrations → токен</td></tr>
+<tr class="pick"><td class="mname">Реквизиты карты</td><td>Да, Mirocard → Мои карты → данные карты</td><td>Посмотреть заново и ввести при привязке новой карты</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>5. Модели: что включено и почему именно это</h2>
+<p class="lead">Цены указаны за 1 миллион токенов: отдельно за вход (что вы загружаете) и за выход (что агент отвечает). Данные проверены 24 октября 2026.</p>
+<div class="tblwrap"><table>
+<thead><tr><th>Модель</th><th>Вход</th><th>Выход</th><th>Роль в системе</th></tr></thead>
+<tbody>
+<tr class="pick"><td class="mname">DeepSeek 4.1 Flash</td><td>$0,02</td><td>$1,00</td><td>Базовая модель агента. Инструкции, аналитика, вызов инструментов</td></tr>
+<tr class="pick"><td class="mname">GLM 5.3 Flash</td><td>$0,15</td><td>$0,50</td><td>Самый дешёвый по ответу. Работает у вашего агента «Тренд-стилист»</td></tr>
+<tr><td class="mname">LongCat 2.0</td><td>$0,30</td><td>$1,20</td><td>Запасной вариант, хорошо работает с вызовом инструментов</td></tr>
+<tr><td class="mname">Step 5 Preview</td><td>$1,00</td><td>$2,70</td><td>Самый дорогой из четырёх. Включён, но переключайтесь на него точечно</td></tr>
+</tbody></table></div>
+<div class="card alert">
+<strong>Почему дорогие модели выключены.</strong> Claude и GPT стоят в десятки раз больше за тот же ход. При двух-трёх параллельных агентах десять долларов на балансе уходят за час. Оставляйте включёнными эти четыре — этого хватает для всех задач курса.
+</div>
+<h3>Что означает «миллион токенов»</h3>
+<p>Токен — универсальная единица объёма информации: текст, поисковые запросы, загрузка документов, вызовы инструментов. Миллион токенов — это, например, работа с очень большим документом или длинный диалог с ним целиком. У всех четырёх моделей окно контекста 1 миллион токенов: агент удерживает в голове всю переписку и все собранные данные за один сеанс.</p>
+</section>
+
+<section>
+<h2>6. Что делать, если сломалось</h2>
+<div class="tblwrap"><table>
+<thead><tr><th>Симптом</th><th>Причина</th><th>Что делать</th></tr></thead>
+<tbody>
+<tr><td>Слева в LobeHub нет агента</td><td>Вход под другим Google-аккаунтом</td><td>Выйти и войти тем же аккаунтом, с которым вы регистрировались</td></tr>
+<tr><td>Список моделей в провайдере пустой</td><td>Ключ не вставлен или вставлен с пробелами</td><td>Перевставить ключ и URL, нажать «Загрузить модели»</td></tr>
+<tr><td>Кнопка «Проверить подключение» не срабатывает</td><td>Ограничение интерфейса, а не ошибка</td><td>Не нажимать. Ориентир — только список моделей после загрузки</td></tr>
+<tr><td>Google Диск и Gmail просят авторизацию по кругу</td><td>Ограничение встроенных коннекторов</td><td>Подключить их через Composio — там работает</td></tr>
+<tr><td>По ссылке MCP-сервера «Метод не разрешён»</td><td>Ссылку открыли вместо копирования</td><td>Скопировать адрес и вставить в поле URL коннектора. Не переходить по нему</td></tr>
+<tr><td>Агент отвечает, но не использует инструменты</td><td>Не подключён коннектор, нужный для задачи</td><td>Настройки → Коннекторы. Или спросите агента: «каких навыков тебе не хватает?»</td></tr>
+<tr><td>«Не найдено навыков»</td><td>Нормальное состояние на старте</td><td>Это не ошибка. Навыки ставятся по запросу: «найди эти навыки»</td></tr>
+<tr><td>Баланс уменьшается быстрее ожидаемого</td><td>Комиссии за операции с картой и включённые дорогие модели</td><td>OpenRouter → Активность: видно каждое списание. Оставьте включёнными четыре бюджетные модели</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>7. Чек-лист: среда готова</h2>
+<ul class="check">
+<li>LobeHub открывается, агент виден слева</li>
+<li>Провайдер OpenRouter включён, список моделей не пустой</li>
+<li>Включены ровно четыре модели: DeepSeek 4.1 Flash, GLM 5.3 Flash, LongCat 2.0, Step 5 Preview</li>
+<li>Подключены Google Документы и Google Таблицы</li>
+<li>Подключён поиск в сети (Tavily)</li>
+<li>Подключён Composio, в нём — Gmail</li>
+<li>Агент отвечает на вопрос «Какие задачи ты можешь решать?»</li>
+<li>Ключи сохранены в одном файле в облаке</li>
+</ul>
+</section>
+
+</main>
+
+<footer><div class="wrap">
+Раздаточный материал №9 · Карта вашей среды · Занятие 2, 23 октября 2026<br>
+Источники: lobehub.com/pricing · openrouter.ai · mirocard.ru · tavily.com · composio.dev · apify.com<br>
+Данные проверены 24 октября 2026. Тарифы и лимиты меняются — сверяйтесь перед оплатой.
+</div></footer>
+</body>
+</html>
