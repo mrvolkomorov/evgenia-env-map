@@ -82,7 +82,7 @@ footer a{color:#8fb4e8}
 <tr class="pick"><td class="mname">Четыре модели</td><td>Там же, список моделей провайдера</td><td>Включены DeepSeek 4.1 Flash, GLM 5.3 Flash, LongCat 2.0, Step 5 Preview</td><td>Четыре бюджетные модели на выбор. Дорогие (Claude, GPT) выключены намеренно</td></tr>
 <tr class="pick"><td class="mname">Google Документы</td><td>Настройки → Коннекторы</td><td>В списке коннекторов значок Google Docs без ошибки</td><td>Агент может создать и заполнить документ</td></tr>
 <tr class="pick"><td class="mname">Google Таблицы</td><td>Настройки → Коннекторы</td><td>В списке коннекторов значок Google Sheets без ошибки</td><td>Агент может собрать данные в таблицу — это главный рабочий сценарий</td></tr>
-<tr class="pick"><td class="mname">Поиск в сети (Tavily)</td><td>Настройки → Коннекторы → пользовательский навык MCP</td><td>У коннектора есть инструменты поиска и извлечения</td><td>Агент ищет в интернете сам, без вас</td></tr>
+<tr class="pick"><td class="mname">Поиск в сети и сбор страниц (Firecrawl)</td><td>Настройки → Коннекторы → пользовательский навык MCP</td><td>У коннектора есть инструменты поиска, сбора страницы и разбора текста</td><td>Агент ищет в интернете сам и читает целые страницы, без вас</td></tr>
 <tr class="pick"><td class="mname">Агрегатор приложений (Composio)</td><td>Настройки → Коннекторы → пользовательский навык MCP</td><td>В списке приложений Composio есть Gmail с зелёной галочкой</td><td>Одно подключение вместо десяти: почта, Диск, Instagram, Notion и другие по кнопке Connect</td></tr>
 <tr class="pick"><td class="mname">Агент «Тренд-стилист»</td><td>Слева в списке агентов, открыт по умолчанию</td><td>Открыть его чат и написать: «Какие задачи ты можешь решать?»</td><td>Рабочий агент под анализ трендов. Имя можно переименовать в один клик</td></tr>
 </tbody></table></div>
@@ -94,7 +94,7 @@ footer a{color:#8fb4e8}
 <ol class="steps">
 <li><strong>Откройте LobeHub.</strong> Слева должен быть виден ваш агент. Если слева пусто — вы вошли под другим аккаунтом Google.</li>
 <li><strong>Настройки → Поставщик ИИ → OpenRouter.</strong> Карточка провайдера в статусе «включено», ниже — список моделей. Список не пустой — значит ключ принят.</li>
-<li><strong>Настройки → Коннекторы.</strong> Найдите четыре: Google Документы, Google Таблицы, Tavily, Composio. У каждого должен быть статус подключения, а не ошибка.</li>
+<li><strong>Настройки → Коннекторы.</strong> Найдите четыре: Google Документы, Google Таблицы, Firecrawl, Composio. У каждого должен быть статус подключения, а не ошибка.</li>
 <li><strong>Откройте агента и напишите: «Какие задачи ты можешь решать?»</strong> Если он отвечает и задаёт уточняющие вопросы — вся цепочка работает.</li>
 </ol>
 <div class="card alert">
@@ -111,7 +111,7 @@ footer a{color:#8fb4e8}
 <tr><td class="mname">LobeHub</td><td class="mid">lobehub.com</td><td>Среда, где живут агенты. Настройки, коннекторы, диалоги</td></tr>
 <tr><td class="mname">OpenRouter</td><td class="mid">openrouter.ai</td><td>Ключи, баланс, история расходов. Раздел «Активность» — сюда смотреть, куда ушли деньги</td></tr>
 <tr><td class="mname">Mirocard</td><td class="mid">mirocard.ru</td><td>Карта для оплаты зарубежных сервисов: выпуск, пополнение, реквизиты</td></tr>
-<tr><td class="mname">Tavily</td><td class="mid">tavily.com</td><td>Поиск в сети. Ключ API — в настройках профиля</td></tr>
+<tr><td class="mname">Firecrawl</td><td class="mid">firecrawl.dev</td><td>Поиск в сети и сбор страниц. Ключ API — в кабинете, раздел API Keys</td></tr>
 <tr><td class="mname">Composio</td><td class="mid">composio.dev</td><td>Каталог приложений. Здесь же — MCP-адрес для подключения</td></tr>
 <tr><td class="mname">Apify</td><td class="mid">apify.com</td><td>Сбор данных с маркетплейсов. Регистрация, токен, каталог сценариев</td></tr>
 <tr><td class="mname">Google</td><td class="mid">docs.google.com · sheets.google.com · drive.google.com</td><td>Куда агенты складывают результат</td></tr>
@@ -123,14 +123,14 @@ footer a{color:#8fb4e8}
 <p class="lead">На занятии мы складывали ключи в текстовый файл на телефоне. Это рабочий способ, но файл легко потерять — поэтому держим один файл в одном месте.</p>
 <ol class="steps">
 <li><strong>Создайте один файл</strong> с названием вроде «Мои ключи — не отправлять» и положите его в облако под своим Google-аккаунтом. Не в заметки телефона: они теряются при переустановке.</li>
-<li><strong>Впишите туда четыре вещи:</strong> ключ OpenRouter, вторую строку-URL из того же окна, ключ Tavily, MCP-адрес Composio.</li>
+<li><strong>Впишите туда четыре вещи:</strong> ключ OpenRouter, вторую строку-URL из того же окна, ключ Firecrawl, MCP-адрес Composio.</li>
 <li><strong>Не пересылайте этот файл никому</strong> и не прикрепляйте к переписке. Файл с ключами — это доступ к вашим деньгам и к вашей почте.</li>
 </ol>
 <div class="tblwrap"><table>
 <thead><tr><th>Ключ</th><th>Показывается повторно?</th><th>Если потеряли</th></tr></thead>
 <tbody>
 <tr class="pick"><td class="mname">OpenRouter</td><td>Нет, показывается один раз</td><td>OpenRouter → API keys → создать новый. Старый отзывается — переподключите провайдера в LobeHub</td></tr>
-<tr class="pick"><td class="mname">Tavily</td><td>Да, в настройках профиля</td><td>Tavily → Settings → API keys → скопировать заново</td></tr>
+<tr class="pick"><td class="mname">Firecrawl</td><td>Да, в кабинете</td><td>Firecrawl → Settings → API Keys → скопировать заново. Ключ начинается с <span class="mid">fc-</span></td></tr>
 <tr class="pick"><td class="mname">Composio</td><td>Да, MCP-адрес на главной странице</td><td>Composio → главная → блок с MCP-адресом → скопировать</td></tr>
 <tr class="pick"><td class="mname">Apify</td><td>Да, в настройках профиля</td><td>Apify → Settings → Integrations → токен</td></tr>
 <tr class="pick"><td class="mname">Реквизиты карты</td><td>Да, Mirocard → Мои карты → данные карты</td><td>Посмотреть заново и ввести при привязке новой карты</td></tr>
@@ -178,7 +178,7 @@ footer a{color:#8fb4e8}
 <li>Провайдер OpenRouter включён, список моделей не пустой</li>
 <li>Включены ровно четыре модели: DeepSeek 4.1 Flash, GLM 5.3 Flash, LongCat 2.0, Step 5 Preview</li>
 <li>Подключены Google Документы и Google Таблицы</li>
-<li>Подключён поиск в сети (Tavily)</li>
+<li>Подключён поиск в сети (Firecrawl)</li>
 <li>Подключён Composio, в нём — Gmail</li>
 <li>Агент отвечает на вопрос «Какие задачи ты можешь решать?»</li>
 <li>Ключи сохранены в одном файле в облаке</li>
@@ -189,7 +189,7 @@ footer a{color:#8fb4e8}
 
 <footer><div class="wrap">
 Раздаточный материал №9 · Карта вашей среды · Занятие 2, 23 октября 2026<br>
-Источники: lobehub.com/pricing · openrouter.ai · mirocard.ru · tavily.com · composio.dev · apify.com<br>
+Источники: lobehub.com/pricing · openrouter.ai · mirocard.ru · firecrawl.dev · docs.firecrawl.dev · composio.dev · apify.com<br>
 Данные проверены 24 октября 2026. Тарифы и лимиты меняются — сверяйтесь перед оплатой.
 </div></footer>
 </body>
